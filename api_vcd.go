@@ -1,6 +1,7 @@
 package govcd
 
 import (
+        "crypto/tls"
 	"fmt"
 	"net/http"
 	"net/url"
