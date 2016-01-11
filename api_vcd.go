@@ -173,7 +173,7 @@ func NewVCDClient(vcdEndpoint url.URL) *VCDClient {
 		Client: Client{
 			APIVersion: "5.5",
 			VCDVDCHREF: vcdEndpoint,
-			Http:       http.Client{Transport: &http.Transport{TLSHandshakeTimeout: 120 * time.Second}},
+			Http:       http.Client{Transport: &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, TLSHandshakeTimeout: 120 * time.Second}},
 		},
 	}
 }
